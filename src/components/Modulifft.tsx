@@ -16,15 +16,15 @@ import { InteractiveHow } from "@/components/ui/interactive-how";
 import logoUrl from "../logo.svg";
 
 const NAV = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 /* --------------------------- NAVBAR --------------------------- */
-function Navbar() {
+export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("#home");
@@ -50,7 +50,7 @@ function Navbar() {
               : "glass"
           }`}
         >
-          <a href="#home" className="flex items-center shrink-0">
+          <a href="/" className="flex items-center shrink-0">
             <img src={logoUrl} alt="Modulifft Logo" className="h-12 sm:h-14 w-auto object-contain" />
           </a>
 
@@ -73,12 +73,10 @@ function Navbar() {
           </ul>
 
           <div className="hidden lg:flex items-center gap-2 shrink-0">
-            <button className="px-4 py-1 text-sm rounded-lg text-foreground/90 hover:bg-white/5 transition">
-              Login
-            </button>
-            <button className="px-4 py-1 text-sm rounded-lg font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_8px_30px_-6px_rgba(239,136,173,0.6)] transition">
-              Sign Up
-            </button>
+            
+            <a href="/Product" className="px-4 py-1 text-sm rounded-lg font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_8px_30px_-6px_rgba(239,136,173,0.6)] transition">
+              Explore ModSim X
+            </a>
           </div>
 
           <button
@@ -122,12 +120,12 @@ function Navbar() {
           ))}
         </ul>
         <div className="mt-auto flex flex-col gap-3">
-          <button className="w-full py-3 rounded-xl border border-border text-foreground">
+          <a href="/Product" className="w-full py-3 rounded-xl border border-border text-foreground text-center">
             Login
-          </button>
-          <button className="w-full py-3 rounded-xl font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground">
-            Sign Up
-          </button>
+          </a>
+          <a href="/Product" className="w-full py-3 rounded-xl font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground text-center">
+            View Product
+          </a>
         </div>
       </motion.div>
       {open && (
@@ -229,10 +227,10 @@ function Hero() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#contact"
+                  href="/Product"
                   className="group inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-sm sm:text-base font-semibold bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_12px_40px_-8px_rgba(239,136,173,0.6)] transition"
                 >
-                  Request Demo
+                  Explore ModSim X
                   <FiArrowRight className="group-hover:translate-x-0.5 transition" />
                 </a>
                 <a
@@ -467,7 +465,7 @@ function Contact() {
 }
 
 /* --------------------------- FOOTER --------------------------- */
-function Footer() {
+export function Footer() {
   return <SiteFooter />;
 }
 
